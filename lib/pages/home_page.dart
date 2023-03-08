@@ -169,7 +169,7 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 25),
             Text(
               "Tracking Parkir",
               style: TextStyle(
@@ -214,6 +214,44 @@ class HomePage extends StatelessWidget {
                           ),
                           Text(
                             "Jam Masuk: 2022-02-05 20:00",
+                            style: TextStyle(fontSize: 14, color: blackColor),
+                          ),
+                        ],
+                      )
+                    ],
+                  )),
+            ),
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              color: Color(0xffECF0F1),
+              child: Container(
+                  height: 90,
+                  width: double.infinity,
+                  child: Row(
+                    children: [
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        color: Color(0xffFDEBD0),
+                        child: Container(
+                          height: 75,
+                          width: 50,
+                          child: Icon(
+                            Icons.cancel,
+                            size: 35,
+                            color: Color(0xffF39C12),
+                          ),
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Anda Belum melakukan Parkir",
                             style: TextStyle(fontSize: 14, color: blackColor),
                           ),
                         ],

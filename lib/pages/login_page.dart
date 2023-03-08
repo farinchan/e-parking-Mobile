@@ -2,6 +2,7 @@ import 'package:e_parking_mobile/color.dart';
 import 'package:e_parking_mobile/pages/bottom_navigation.dart';
 import 'package:e_parking_mobile/widget/textfield_costum.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -45,13 +46,7 @@ class LoginPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             InkWell(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return BottomNavigation();
-                  },
-                ));
-              },
+              onTap: () => context.goNamed("home"),
               child: Container(
                 width: double.infinity,
                 height: 50,

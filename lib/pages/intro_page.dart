@@ -1,6 +1,6 @@
 import 'package:e_parking_mobile/color.dart';
-import 'package:e_parking_mobile/pages/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -30,13 +30,7 @@ class IntroPage extends StatelessWidget {
             ),
             Image.asset("assets/images/ilustrasi1.png"),
             InkWell(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return LoginPage();
-                  },
-                ));
-              },
+              onTap: () => context.goNamed("login"),
               child: Container(
                 width: MediaQuery.of(context).size.width - 100,
                 height: 50,

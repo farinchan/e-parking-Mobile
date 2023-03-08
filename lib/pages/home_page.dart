@@ -110,18 +110,23 @@ class HomePage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: Column(
                       children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          color: Color(0xffD5F5E3),
-                          child: Container(
-                            height: 75,
-                            width: double.infinity,
-                            child: Icon(
-                              Icons.history_outlined,
-                              size: 35,
-                              color: Color(0xff2ECC71),
+                        InkWell(
+                          onTap: () {
+                            
+                          },
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            color: Color(0xffD5F5E3),
+                            child: Container(
+                              height: 75,
+                              width: double.infinity,
+                              child: Icon(
+                                Icons.history_outlined,
+                                size: 35,
+                                color: Color(0xff2ECC71),
+                              ),
                             ),
                           ),
                         ),

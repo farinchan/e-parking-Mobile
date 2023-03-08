@@ -1,3 +1,4 @@
+import 'package:e_parking_mobile/config/routes.dart';
 import 'package:e_parking_mobile/pages/intro_page.dart';
 import 'package:e_parking_mobile/provider/bottom_navigation_provider.dart';
 import 'package:flutter/material.dart';
@@ -18,10 +19,12 @@ class MyApp extends StatelessWidget {
           create: (context) => BottomNavigationProvider(),
         ),
       ],
-      child: MaterialApp(
+      child: MaterialApp.router(
         title: "E-Parking",
-        home: IntroPage(),
         theme: ThemeData(primarySwatch: Colors.green),
+        routeInformationParser: routes.routeInformationParser,
+        routerDelegate: routes.routerDelegate,
+        routeInformationProvider: routes.routeInformationProvider,
       ),
     );
   }

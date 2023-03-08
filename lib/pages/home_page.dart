@@ -1,5 +1,6 @@
 import 'package:e_parking_mobile/color.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -111,9 +112,7 @@ class HomePage extends StatelessWidget {
                     child: Column(
                       children: [
                         InkWell(
-                          onTap: () {
-                            
-                          },
+                          onTap: () => context.goNamed("history"),
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),

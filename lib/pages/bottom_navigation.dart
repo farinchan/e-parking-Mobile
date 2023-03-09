@@ -2,6 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:e_parking_mobile/color.dart';
 import 'package:e_parking_mobile/pages/home_page.dart';
 import 'package:e_parking_mobile/pages/profile_page.dart';
+import 'package:e_parking_mobile/pages/topup_page.dart';
 import 'package:e_parking_mobile/provider/bottom_navigation_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,10 +14,7 @@ class BottomNavigation extends StatelessWidget {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
+    TopupPage(),
     ProfilePage()
   ];
 

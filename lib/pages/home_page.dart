@@ -1,6 +1,8 @@
 import 'package:e_parking_mobile/color.dart';
+import 'package:e_parking_mobile/provider/bottom_navigation_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -80,18 +82,23 @@ class HomePage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: Column(
                       children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          color: Color(0xffE8DAEF),
-                          child: Container(
-                            height: 75,
-                            width: double.infinity,
-                            child: Icon(
-                              Icons.currency_exchange,
-                              size: 35,
-                              color: Color(0xff8E44AD),
+                        InkWell(
+                          onTap: () {
+                            context.goNamed("topup");
+                          },
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            color: Color(0xffE8DAEF),
+                            child: Container(
+                              height: 75,
+                              width: double.infinity,
+                              child: Icon(
+                                Icons.currency_exchange,
+                                size: 35,
+                                color: Color(0xff8E44AD),
+                              ),
                             ),
                           ),
                         ),
@@ -145,18 +152,21 @@ class HomePage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: Column(
                       children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          color: Color(0xffFADBD8),
-                          child: Container(
-                            height: 75,
-                            width: double.infinity,
-                            child: Icon(
-                              Icons.info_outline,
-                              size: 35,
-                              color: Color(0xffE74C3C),
+                        InkWell(
+                          onTap: () => context.goNamed("informasi"),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            color: Color(0xffFADBD8),
+                            child: Container(
+                              height: 75,
+                              width: double.infinity,
+                              child: Icon(
+                                Icons.info_outline,
+                                size: 35,
+                                color: Color(0xffE74C3C),
+                              ),
                             ),
                           ),
                         ),

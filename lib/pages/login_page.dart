@@ -1,13 +1,13 @@
 import 'package:e_parking_mobile/color.dart';
 import 'package:e_parking_mobile/pages/bottom_navigation.dart';
+import 'package:e_parking_mobile/provider/login_provider.dart';
 import 'package:e_parking_mobile/widget/textfield_costum.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
-
-  TextEditingController emailC = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class LoginPage extends StatelessWidget {
             ),
             Center(
               child: const Text(
-                "E-Parking",
+                "Smart Parking",
                 style: TextStyle(
                     color: primaryColor,
                     fontWeight: FontWeight.bold,
@@ -35,18 +35,21 @@ class LoginPage extends StatelessWidget {
             TextFieldCustom(
               label: "Email",
               hintText: "Enter Your Email",
-              controller: emailC,
+              controller: Provider.of<LoginProvider>(context).emailC,
             ),
             SizedBox(height: 10),
             TextFieldCustom(
               label: "Email",
               isPassword: true,
               hintText: "Enter Your Password",
-              controller: emailC,
+              controller: Provider.of<LoginProvider>(context).passC,
             ),
             SizedBox(height: 20),
             InkWell(
-              onTap: () => context.goNamed("home"),
+              onTap: () {
+                Provider.of<LoginProvider>(context, listen: false).Login();
+                // context.goNamed("home")
+              },
               child: Container(
                 width: double.infinity,
                 height: 50,

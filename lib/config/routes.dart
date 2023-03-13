@@ -1,5 +1,6 @@
 import 'package:e_parking_mobile/pages/bottom_navigation.dart';
 import 'package:e_parking_mobile/pages/history_page.dart';
+import 'package:e_parking_mobile/pages/informasi_page.dart';
 import 'package:e_parking_mobile/pages/intro_page.dart';
 import 'package:e_parking_mobile/pages/login_page.dart';
 import 'package:e_parking_mobile/pages/topup_page.dart';
@@ -42,6 +43,13 @@ final GoRouter routes = GoRouter(
           name: 'topup',
           builder: (BuildContext context, GoRouterState state) {
             return TopupPage();
+          },
+        ),
+        GoRoute(
+          path: 'informasi',
+          name: 'informasi',
+          builder: (BuildContext context, GoRouterState state) {
+            return InformasiPage();
           },
         ),
       ],

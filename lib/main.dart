@@ -1,6 +1,7 @@
 import 'package:e_parking_mobile/config/routes.dart';
 import 'package:e_parking_mobile/pages/intro_page.dart';
 import 'package:e_parking_mobile/provider/bottom_navigation_provider.dart';
+import 'package:e_parking_mobile/provider/login_provider.dart';
 import 'package:e_parking_mobile/provider/voucher_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => BottomNavigationProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => LoginProvider(),
         ),
         ChangeNotifierProvider(
           create: (context) => VoucherProvider(),

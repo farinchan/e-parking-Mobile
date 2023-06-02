@@ -3,12 +3,22 @@ import 'package:e_parking_mobile/pages/history_page.dart';
 import 'package:e_parking_mobile/pages/informasi_page.dart';
 import 'package:e_parking_mobile/pages/intro_page.dart';
 import 'package:e_parking_mobile/pages/login_page.dart';
+import 'package:e_parking_mobile/pages/notification_page.dart';
+import 'package:e_parking_mobile/pages/register_page.dart';
+import 'package:e_parking_mobile/pages/splash_screen.dart';
 import 'package:e_parking_mobile/pages/topup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter routes = GoRouter(
   routes: <RouteBase>[
+    GoRoute(
+      path: '/',
+      name: 'splash',
+      builder: (BuildContext context, GoRouterState state) {
+        return SplashScreen();
+      },
+    ),
     GoRoute(
         path: '/intro',
         name: 'intro',
@@ -23,6 +33,13 @@ final GoRouter routes = GoRouter(
               return LoginPage();
             },
           ),
+          GoRoute(
+            path: 'register',
+            name: "register",
+            builder: (BuildContext context, GoRouterState state) {
+              return RegisterPage();
+            },
+          ),
         ]),
     GoRoute(
       path: '/home',
@@ -31,6 +48,13 @@ final GoRouter routes = GoRouter(
         return BottomNavigation();
       },
       routes: <RouteBase>[
+        GoRoute(
+          path: 'notification',
+          name: 'notification',
+          builder: (BuildContext context, GoRouterState state) {
+            return NotificationPage();
+          },
+        ),
         GoRoute(
           path: 'history',
           name: 'history',
@@ -55,7 +79,7 @@ final GoRouter routes = GoRouter(
       ],
     ),
   ],
-  initialLocation: "/intro",
+  initialLocation: "/",
   debugLogDiagnostics: true,
   routerNeglect: true,
 );

@@ -37,7 +37,9 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.goNamed("notification");
+                  },
                   icon: Icon(Icons.notifications),
                   iconSize: 30,
                 )
@@ -53,7 +55,7 @@ class HomePage extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        "saldo",
+                        "Saldo",
                         style: TextStyle(
                             fontSize: 26,
                             color: whiteColor,
@@ -227,7 +229,7 @@ class HomePage extends StatelessWidget {
                                 color: blackColor),
                           ),
                           Text(
-                            "Jam Masuk: 2022-02-05 20:00",
+                            "Jam Masuk: 2022-02-06 13:30",
                             style: TextStyle(fontSize: 14, color: blackColor),
                           ),
                         ],
@@ -235,44 +237,44 @@ class HomePage extends StatelessWidget {
                     ],
                   )),
             ),
-            Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              color: Color(0xffECF0F1),
-              child: Container(
-                  height: 90,
-                  width: double.infinity,
-                  child: Row(
-                    children: [
-                      Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        color: Color(0xffFDEBD0),
-                        child: Container(
-                          height: 75,
-                          width: 50,
-                          child: Icon(
-                            Icons.cancel,
-                            size: 35,
-                            color: Color(0xffF39C12),
-                          ),
-                        ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Anda Belum melakukan Parkir",
-                            style: TextStyle(fontSize: 14, color: blackColor),
-                          ),
-                        ],
-                      )
-                    ],
-                  )),
-            ),
+            // Card(
+            //   shape: RoundedRectangleBorder(
+            //     borderRadius: BorderRadius.circular(10.0),
+            //   ),
+            //   color: Color(0xffECF0F1),
+            //   child: Container(
+            //       height: 90,
+            //       width: double.infinity,
+            //       child: Row(
+            //         children: [
+            //           Card(
+            //             shape: RoundedRectangleBorder(
+            //               borderRadius: BorderRadius.circular(10.0),
+            //             ),
+            //             color: Color(0xffFDEBD0),
+            //             child: Container(
+            //               height: 75,
+            //               width: 50,
+            //               child: Icon(
+            //                 Icons.cancel,
+            //                 size: 35,
+            //                 color: Color(0xffF39C12),
+            //               ),
+            //             ),
+            //           ),
+            //           Column(
+            //             crossAxisAlignment: CrossAxisAlignment.start,
+            //             mainAxisAlignment: MainAxisAlignment.center,
+            //             children: [
+            //               Text(
+            //                 "Anda Belum melakukan Parkir",
+            //                 style: TextStyle(fontSize: 14, color: blackColor),
+            //               ),
+            //             ],
+            //           )
+            //         ],
+            //       )),
+            // ),
           ],
         ),
       )),

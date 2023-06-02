@@ -1,10 +1,19 @@
 import 'package:e_parking_mobile/color.dart';
+import 'package:e_parking_mobile/provider/login_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:swipeable_button_view/swipeable_button_view.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,11 +115,20 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
                   activeColor: Color(0xFF009C41),
-                  isFinished: false,
+                  isFinished: Provider.of<LoginProvider>(context).logoutState,
                   onWaitingProcess: () {
-                    Future.delayed(Duration(seconds: 2), () {});
+                    Future.delayed(Duration(seconds: 2), () {
+                      Provider.of<LoginProvider>(context, listen: false)
+                          .logout();
+                    });
                   },
-                  onFinish: () async {},
+                  onFinish: () async {
+                    final SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+                    await prefs.remove('token');
+                    context.goNamed("intro");
+                    Provider.of<LoginProvider>(context, listen: false).logout();
+                  },
                 ),
               ),
             )

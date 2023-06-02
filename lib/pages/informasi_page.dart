@@ -38,6 +38,9 @@ class InformasiPage extends StatelessWidget {
                   children: [
                     Image.asset(
                       "assets/images/ilustrasi4.png",
+                      height: 60,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
                     ),
                     Positioned.fill(
                       child: Align(
@@ -46,14 +49,7 @@ class InformasiPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "Saldo Mu",
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: whiteColor,
-                              ),
-                            ),
-                            Text(
-                              "Rp. 80.000",
+                              "About",
                               style: TextStyle(
                                   fontSize: 28,
                                   fontWeight: FontWeight.bold,
@@ -67,6 +63,11 @@ class InformasiPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+              Text(
+                "\t\tSmart parking kampus adalah suatu sistem yang digunakan untuk mengatur parkir kendaraan di lingkungan kampus secara elektronik. Sistem ini dirancang untuk memudahkan mahasiswa, dosen, dan staf kampus dalam memarkirkan kendaraan mereka di area parkir yang telah disediakan oleh kampus.",
+                textAlign: TextAlign.justify,
+                style: TextStyle(color: blackColor, fontSize: 14),
+              )
             ],
           ),
         ),

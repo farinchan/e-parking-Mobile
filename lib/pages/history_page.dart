@@ -29,7 +29,7 @@ class HistoryPage extends StatelessWidget {
                   child: Column(
                     children: [
                       TextField(
-                        controller: TextEditingController(text: "23"),
+                        controller: TextEditingController(text: "Hari ini"),
                         readOnly: true,
                         decoration: InputDecoration(
                           // label: Text(widget.label),
@@ -115,13 +115,13 @@ class HistoryPage extends StatelessWidget {
                                 color: blackColor),
                           ),
                           Text(
-                            "Jam Masuk: 2022-02-05 20:00",
+                            "Jam Masuk: 2022-02-05 15:00",
                             style: TextStyle(
                               fontSize: 14,
                             ),
                           ),
                           Text(
-                            "Jam keluar: 2022-02-05 20:00",
+                            "Jam keluar: 2022-02-05 17:00",
                             style: TextStyle(
                               fontSize: 14,
                             ),

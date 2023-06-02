@@ -49,6 +49,7 @@ class _TextFieldCustomState extends State<TextFieldCustom> {
         focusColor: primaryColor,
         filled: true,
         fillColor: whiteColor,
+
         errorText: widget.errorText,
         suffixIcon: widget.isPassword
             ? IconButton(

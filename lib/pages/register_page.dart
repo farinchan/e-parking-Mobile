@@ -1,13 +1,12 @@
 import 'package:e_parking_mobile/color.dart';
-import 'package:e_parking_mobile/pages/bottom_navigation.dart';
-import 'package:e_parking_mobile/provider/login_provider.dart';
+import 'package:e_parking_mobile/provider/register_provider.dart';
 import 'package:e_parking_mobile/widget/textfield_costum.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,32 +32,33 @@ class LoginPage extends StatelessWidget {
             ),
             SizedBox(height: 40),
             TextFieldCustom(
+              label: "Nama",
+              hintText: "Enter Your Name",
+              controller: Provider.of<RegisterProvider>(context).emailC,
+            ),
+            SizedBox(height: 10),
+            TextFieldCustom(
+              label: "Phone",
+              hintText: "Enter Your Phone",
+              controller: Provider.of<RegisterProvider>(context).emailC,
+            ),
+            SizedBox(height: 10),
+            TextFieldCustom(
               label: "Email",
               hintText: "Enter Your Email",
-              controller: Provider.of<LoginProvider>(context).emailC,
+              controller: Provider.of<RegisterProvider>(context).emailC,
             ),
             SizedBox(height: 10),
             TextFieldCustom(
               label: "Email",
               isPassword: true,
               hintText: "Enter Your Password",
-              controller: Provider.of<LoginProvider>(context).passC,
+              controller: Provider.of<RegisterProvider>(context).passC,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Lupa Password",
-                      style: TextStyle(color: Colors.red),
-                    )),
-              ],
-            ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             InkWell(
               onTap: () {
-                Provider.of<LoginProvider>(context, listen: false)
+                Provider.of<RegisterProvider>(context, listen: false)
                     .Login(context);
               },
               child: Container(
@@ -66,7 +66,7 @@ class LoginPage extends StatelessWidget {
                 height: 50,
                 alignment: Alignment.center,
                 child: const Text(
-                  "Login",
+                  "Register",
                   style: TextStyle(
                       color: whiteColor,
                       fontWeight: FontWeight.bold,
@@ -80,12 +80,12 @@ class LoginPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Belum punya akun?"),
+                Text("Sudah Punya Akun?"),
                 TextButton(
                     onPressed: () {
-                      context.goNamed("register");
+                      context.goNamed("login");
                     },
-                    child: Text("Daftar Disini"))
+                    child: Text("Login Disini"))
               ],
             )
           ],

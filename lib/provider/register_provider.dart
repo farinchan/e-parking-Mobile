@@ -5,14 +5,32 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class LoginProvider extends ChangeNotifier {
+class RegisterProvider extends ChangeNotifier {
+  final TextEditingController nameC = TextEditingController();
+  final TextEditingController phoneC = TextEditingController();
   final TextEditingController emailC = TextEditingController();
   final TextEditingController passC = TextEditingController();
 
+  String? nameE;
+  String? phoneE;
   String? emailE;
   String? passE;
 
   void Login(BuildContext context) async {
+    if (nameC.text == "") {
+      nameE = "Nama Harus Diisi";
+    } else {
+      nameE = null;
+    }
+
+    if (phoneC.text == "") {
+      phoneE = "No.Telp Harus Diisi";
+    } else if (phoneC.text.length < 10) {
+      phoneE = "No.Telp Tidak Valid";
+    } else {
+      phoneE = null;
+    }
+
     final bool emailValid = RegExp(
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
         .hasMatch(emailC.text);
@@ -33,19 +51,15 @@ class LoginProvider extends ChangeNotifier {
       passE = null;
     }
 
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    if (emailE == null && passE == null) {
-      var result = await ApiServices()
-          .loginEndpoint({"email": emailC.text, "password": passC.text});
+    if (nameE == null && phoneE == null && emailE == null && passE == null) {
+      var result = await ApiServices().RegisterEndpoint({
+        "name": nameC.text,
+        "phone": phoneC.text,
+        "email": emailC.text,
+        "password": passC.text
+      });
       print(result.toString());
-      await prefs.setString('token', result["token"]);
-      context.goNamed("home");
+      context.goNamed("login");
     }
-  }
-
-  bool logoutState = false;
-  void logout() {
-    logoutState = !logoutState;
-    notifyListeners();
   }
 }

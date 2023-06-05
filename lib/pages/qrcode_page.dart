@@ -1,4 +1,6 @@
+import 'package:e_parking_mobile/provider/profile_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class QrCodePage extends StatelessWidget {
@@ -9,7 +11,7 @@ class QrCodePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: QrImage(
-          data: 'fajri rinaldi chan',
+          data: Provider.of<ProfileProvider>(context).uid.toString(),
           version: QrVersions.auto,
           size: 200.0,
         ),

@@ -15,6 +15,7 @@ class ProfileProvider extends ChangeNotifier {
     email = result.result.userEmail;
     password = result.result.userPassword;
     phone = result.result.userPhone;
-    telegram = result.result.telegramToken;
+    telegram = result.result.userTelegram;
+    notifyListeners();
   }
 }

@@ -1,8 +1,8 @@
-import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:e_parking_mobile/data/models/profile_model.dart';
+import 'package:e_parking_mobile/data/models/saldo_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiServices {
@@ -54,9 +54,19 @@ class ApiServices {
     final prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('token');
     log("$_url/login");
-    var response = await dio.get("$_url/register",
+    var response = await dio.get("$_url/profile",
         options: Options(headers: {"auth-token": token}));
     log(response.data.toString());
-    return Profile.fromJson(jsonDecode(response.data));
+    return Profile.fromJson(response.data);
+  }
+
+  Future<Saldo> SaldoEndpoint() async {
+    final prefs = await SharedPreferences.getInstance();
+    String? token = prefs.getString('token');
+    log("$_url/saldo");
+    var response = await dio.get("$_url/saldo",
+        options: Options(headers: {"auth-token": token}));
+    log(response.data.toString());
+    return Saldo.fromJson(response.data);
   }
 }

@@ -24,7 +24,7 @@ class Result {
   final String userEmail;
   final String userPassword;
   final String userPhone;
-  final String telegramToken;
+  final String userTelegram;
   final bool userStatus;
 
   Result({
@@ -33,7 +33,7 @@ class Result {
     required this.userEmail,
     required this.userPassword,
     required this.userPhone,
-    required this.telegramToken,
+    required this.userTelegram,
     required this.userStatus,
   });
 
@@ -43,7 +43,7 @@ class Result {
         userEmail: json["user_email"],
         userPassword: json["user_password"],
         userPhone: json["user_phone"],
-        telegramToken: json["telegram_token"],
+        userTelegram: json["telegram_token"] ?? "-",
         userStatus: json["user_status"],
       );
 
@@ -53,7 +53,7 @@ class Result {
         "user_email": userEmail,
         "user_password": userPassword,
         "user_phone": userPhone,
-        "telegram_token": telegramToken,
+        "telegram_token": userTelegram,
         "user_status": userStatus,
       };
 }

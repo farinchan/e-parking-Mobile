@@ -1,9 +1,7 @@
-import 'dart:ffi';
 
 import 'package:e_parking_mobile/data/api_services.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterProvider extends ChangeNotifier {
   final TextEditingController nameC = TextEditingController();

@@ -1,5 +1,4 @@
 import 'package:e_parking_mobile/config/routes.dart';
-import 'package:e_parking_mobile/pages/intro_page.dart';
 import 'package:e_parking_mobile/provider/bottom_navigation_provider.dart';
 import 'package:e_parking_mobile/provider/login_provider.dart';
 import 'package:e_parking_mobile/provider/profile_provider.dart';

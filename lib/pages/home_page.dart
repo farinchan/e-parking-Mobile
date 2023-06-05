@@ -1,8 +1,6 @@
 import 'package:e_parking_mobile/color.dart';
-import 'package:e_parking_mobile/provider/bottom_navigation_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

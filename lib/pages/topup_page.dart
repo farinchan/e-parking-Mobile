@@ -2,8 +2,6 @@ import 'package:e_parking_mobile/color.dart';
 import 'package:e_parking_mobile/provider/voucher_provider.dart';
 import 'package:e_parking_mobile/widget/textfield_costum.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:provider/provider.dart';
 
 class TopupPage extends StatelessWidget {

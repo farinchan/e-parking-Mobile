@@ -1,7 +1,5 @@
 import 'package:e_parking_mobile/color.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class HistoryPage extends StatelessWidget {
   const HistoryPage({super.key});
